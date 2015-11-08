@@ -1,0 +1,407 @@
+$icon-font-path: "../bower_components/bootstrap-sass-official/assets/fonts/bootstrap/";
+$fa-font-path: "../bower_components/font-awesome/fonts";
+
+$dir-img: '../images/';
+
+
+// bower:scss
+@import "bootstrap-sass-official/assets/stylesheets/_bootstrap.scss";
+@import "font-awesome/scss/font-awesome.scss";
+@import "compass/css3/transform";
+@import "compass/css3/user-interface";
+@import "_fonts";
+
+@mixin prefix($property, $value) {
+	$prefixes: (webkit, moz, ms, o);
+  @each $prefix in $prefixes {
+    #{'-' + $prefix + '-' + $property}: $value;
+  }
+  // Output standard non-prefixed declaration
+  //#{$property}: $value;
+}
+
+@import "_accordion";
+@import "include-media/dist/_include-media";
+
+
+@-webkit-keyframes setinha
+{
+	0%   { bottom: 40px; }
+	100% { bottom: 50px; }
+}
+@-moz-keyframes setinha
+{
+	0%   { bottom: 40px; }
+	100% { bottom: 50px; }
+}
+
+@-o-keyframes setinha
+{
+	0%   { bottom: 40px; }
+	100% { bottom: 50px; }
+}
+
+@keyframes setinha
+{
+	0%   { bottom: 40px; }
+	100% { bottom: 50px; }
+}
+
+
+.arrow-orange{
+  background: url($dir-img + 'arrow-banner-small.png') no-repeat;
+  width: 22px;
+  height: 29px;
+  position: absolute;
+  z-index: 5;
+  display: inline-block;
+}
+
+body, html{
+  margin: 0;
+  padding: 0;
+  font-family: 'TodayShop Regular', arial, 'sans-serif';
+}
+
+@media ( min-width: 760px ) {
+  .navbar > .container {
+      text-align: center;
+  }
+  .navbar-brand,.navbar .navbar-nav,.navbar .navbar-nav > li {
+      float: none;
+      display: inline-block;
+  }
+  .collapse.navbar-collapse {
+      width: auto;
+      clear: none;
+  }
+  .navbar-header{
+    display: none;
+  }
+}
+.scroll-only{
+  display: block;
+  visibility: hidden;
+}
+.navbar-brand{
+  padding: 0;
+  text-align: right;
+}
+.brand{
+  img{
+    margin-left: 50px;
+    position: absolute;
+    top: 100px;
+    z-index: 999;
+		max-width: 189px;
+  }
+}
+.navbar{
+  margin-bottom: 0;
+  border: 0;
+  border-radius: 0;
+  min-height: inherit;
+}
+.navbar-default{
+  background-color: #98cdc8;
+  border: 0;
+  .navbar-nav{
+
+    li{
+      margin-left: 10px;
+      a, &.active{
+        color: #fff;
+        font-size: 25px;
+      }
+      a{
+        font-family: 'TodayShop LightItalic', arial, 'sans-serif';
+        padding-top: 26px;
+        padding-bottom: 25px;
+        @include prefix(transition, .5s all ease-out);
+
+        &.btn-icon{
+          font-size: 21px;
+          padding-top: 23px;
+          padding-bottom: 20px;
+        }
+      }
+    }
+    // hover e active
+    & > .active{
+      & > a{
+        color: #fff;
+        background-color: #e99368;
+        &:hover, &:focus{
+          color: #fff;
+          background-color: #e99368;
+        }
+      }
+    }
+    & > li{
+      & > a:hover, & > a:focus{
+        color: #fff;
+        background-color: #e99368;
+      }
+      & > a.btn-icon:hover, & > a.btn-icon:focus{
+        background: none;
+        color: #e99368;
+        outline: none;
+      }
+    }
+  }
+	.navbar-toggle{
+		border-color: #fff;
+		.icon-bar{
+			background-color: #fff;
+		}
+		&:hover, &:active{
+			background-color: #fff;
+			.icon-bar{
+				background-color: #98cdc8;
+			}
+		}
+	}
+}
+
+.footer{
+  padding-top: 25px;
+  padding-bottom: 25px;
+  background-color: #98cdc8;
+  color: #fff;
+  font-family: 'Trebuchet MS', arial, 'sans-serif';
+  font-size: 13px;
+  p{
+    margin: 0px;
+  }
+}
+
+// ----------------------
+.carousel-control{
+  opacity: inherit;
+  width: 4%;
+  &.left, &.right{
+    background: none;
+  }
+  &.right{
+    text-align: left;
+  }
+}
+.carousel-caption{
+  bottom: 8%;
+  right: 2%;
+  left: initial;
+  padding: 0;
+  width: 40%;
+  text-align: right;
+  text-shadow: none;
+  font-family: 'TodayShop MediumItalic', arial, 'sans-serif';
+  & *{
+    font-size: 40px;
+		line-height: 0.9;
+  }
+}
+.carousel-indicators{
+  bottom: 8%;
+  left: 32%;
+  text-align: left;
+  li{
+    background-color: #f9bfb4;
+    border: none;
+  }
+}
+.carousel-center-arrow{
+  width: 100%;
+  bottom: 0px;
+  position: absolute;
+  height: 110px;
+  text-align: center;
+  //@include prefix(animation, setinha 1s ease-in-out 0s infinite alternate);
+
+	@include prefix(animation-name, setinha);
+	@include prefix(animation-duration, 1s);
+	@include prefix(animation-timing-function, ease-in-out);
+	@include prefix(animation-delay, 0s);
+	@include prefix(animation-iteration-count, infinite);
+	@include prefix(animation-direction, alternate);
+
+  a{
+    background: url($dir-img + 'arrow-banner-big.png') no-repeat;
+    position: absolute;
+    z-index: 5;
+    display: inline-block;
+    @include prefix(transform, rotate(-90deg));
+    width: 85px;
+    height: 143px;
+    text-align: center;
+  }
+}
+
+.arrow-left, .arrow-right{
+  @extend .arrow-orange;
+  top: 50%;
+}
+.arrow-right{
+  @include prefix(transform, rotate(180deg));
+}
+
+.carousel-inner {
+    .item {
+      img{
+        width: 100%;
+      }
+      a{
+        img{
+          width: 100%;
+        }
+      }
+    }
+}
+
+// -----
+.between-boxes{
+  margin-bottom: 60px;
+}
+
+.title-box{
+  position: relative;
+  *{
+    color: #e99368;
+    text-align: center;
+  }
+  h2{
+    font-family: 'TodayShop MediumItalic', arial, 'sans-serif';
+    font-size: 55px;
+    margin-bottom: 0;
+  }
+  p{
+    font-family: 'TodayShop LightItalic', arial, 'sans-serif';
+    font-size: 40px;
+    line-height: 1;
+  }
+  .arrow-blue-left, .arrow-blue-right{
+    position: absolute;
+  }
+  .arrow-blue-left{
+    bottom: -20px;
+    left: 80px;
+    &.two-lines{
+      bottom: 20px;
+    }
+  }
+  .arrow-blue-right{
+    @include prefix(transform, rotate(180deg));
+    bottom: 25px;
+    right: 80px;
+    &.two-lines{
+      bottom: 55px;
+    }
+  }
+}
+
+.text-box{
+  *{
+    font-family: 'TodayShop XLight', arial, 'sans-serif';
+    color: #77787b;
+    font-size: 25px;
+  }
+  strong{
+    font-family: 'TodayShop MediumItalic', arial, 'sans-serif';
+  }
+  p.orange-italic{
+    font-family: 'TodayShop LightItalic', arial, 'sans-serif';
+    color: #e99368;
+  }
+  h3{
+    font-family: 'TodayShop MediumItalic', arial, 'sans-serif';
+    color: #53848a;
+    font-size: 40px;
+    margin-bottom: 0;
+    & + p{
+      margin-bottom: 30px;
+    }
+  }
+}
+
+.gallery-small{
+  img{
+    width: 100%;
+  }
+}
+
+.doctors{
+  margin-bottom: 30px;
+}
+
+.info{
+  font-size: 20px;
+  margin-top: 20px;
+  i.fa{
+    color: #e99368;
+  }
+  .blue{
+    color: #30a5b6;
+    font-family: 'TodayShop XLight', arial, 'sans-serif';
+  }
+  .blue-dark{
+    color: #006685;
+  }
+}
+
+.alert{
+	padding: 5px;
+}
+.alert-dismissible .close{
+	right: 2px;
+}
+.contact{
+  background-color: #f38557;
+  .map{
+    padding-left: 0;
+    iframe{
+      display: block;
+    }
+  }
+  .form{
+    margin-top: 100px;
+    form{
+      margin-left: 50px;
+    }
+  }
+  input[type="text"], textarea{
+    border: 2px solid #fff;
+    padding: 5px 10px;
+    background: transparent;
+    margin-bottom: 15px;
+    width: 100%;
+    font-size: 19px;
+    color:#fff;
+    outline: none;
+    @include input-placeholder {
+      font-family: 'TodayShop XLightItalic', arial, 'sans-serif';
+      color:#fff;
+    }
+  }
+  .btn-send{
+    background: #53858b;
+    font-family: 'TodayShop MediumItalic', arial, 'sans-serif';
+    color: #fff;
+    text-transform: uppercase;
+    border-width: 0;
+    border: 1px solid #fff;
+    padding: 8px 35px 3px 35px;
+    font-size: 22px;
+  }
+
+
+}
+
+.btn-facebook-collapse{
+	position: absolute;
+	top: 10px;
+	right: 75px;
+	a{
+		color: #fff;
+	}
+}
+
+@import "_mediaqueries";

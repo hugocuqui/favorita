@@ -1,0 +1,39 @@
+$dir-font: '../fonts/';
+
+@font-face {
+  font-family: 'TodayShop Regular';
+  src: url($dir-font + 'TodayShop-Regular.otf'); /* IE9 Compat Modes */
+  src: url($dir-font + 'TodayShop-Regular.otf?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+       url($dir-font + 'TodayShop-Regular.otf')  format('truetype'), /* Safari, Android, iOS */
+}
+
+@font-face {
+  font-family: 'TodayShop LightItalic';
+  src: url($dir-font + 'TodayShop-LightItalic.otf'); /* IE9 Compat Modes */
+  src: url($dir-font + 'TodayShop-LightItalic.otf?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+      //  url($dir-font + 'TodayShop-LightItalic.woff2') format('woff2'), /* Super Modern Browsers */
+      //  url($dir-font + 'TodayShop-LightItalic.woff') format('woff'), /* Pretty Modern Browsers */
+       url($dir-font + 'TodayShop-LightItalic.otf')  format('truetype'), /* Safari, Android, iOS */
+      //  url($dir-font + 'TodayShop-LightItalic.svg#svgFontName') format('svg'); /* Legacy iOS */
+}
+
+@font-face {
+  font-family: 'TodayShop MediumItalic';
+  src: url($dir-font + 'TodayShop-MediumItalic.otf'); /* IE9 Compat Modes */
+  src: url($dir-font + 'TodayShop-MediumItalic.otf?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+       url($dir-font + 'TodayShop-MediumItalic.otf')  format('truetype'), /* Safari, Android, iOS */
+}
+
+@font-face {
+  font-family: 'TodayShop XLight';
+  src: url($dir-font + 'TodayShop-XLight.otf'); /* IE9 Compat Modes */
+  src: url($dir-font + 'TodayShop-XLight.otf?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+       url($dir-font + 'TodayShop-XLight.otf')  format('truetype'), /* Safari, Android, iOS */
+}
+
+@font-face {
+  font-family: 'TodayShop XLightItalic';
+  src: url($dir-font + 'TodayShop-XLightItalic.otf'); /* IE9 Compat Modes */
+  src: url($dir-font + 'TodayShop-XLightItalic.otf?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+       url($dir-font + 'TodayShop-XLightItalic.otf')  format('truetype'), /* Safari, Android, iOS */
+}

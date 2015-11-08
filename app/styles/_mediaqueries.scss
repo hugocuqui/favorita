@@ -1,0 +1,152 @@
+$breakpoints: (phone: 319px, tablet: 767px, desktop: 1023px);
+
+@include media(">phone", "<=tablet") {
+  body{
+    font-size: 14px;
+  }
+  .scroll-only{
+    visibility: visible;
+  }
+  .navbar-brand img{
+    width: 30px;
+    margin-left: 10px;
+  }
+  .brand img{
+    top: 60px;
+  }
+  .navbar-default .navbar-nav li a{
+    padding-top: 10px;
+    padding-bottom: 10px;
+  }
+  .text-box{
+    *{
+      font-size: 14px;
+    }
+  }
+  .gallery-small{
+    div{
+      margin-bottom: 15px;
+    }
+  }
+  .title-box{
+    h2{
+      font-size: 18px;
+    }
+    p{
+      font-size: 15px;
+    }
+    .arrow-blue-left{
+      left: 0px;
+      bottom: 3px;
+    }
+    .arrow-blue-right{
+      right: 0px;
+      bottom: 18px;
+    }
+
+  }
+  .carousel-indicators{
+    li{
+      width: 5px;
+      height: 5px;
+    }
+    li.active{
+      width: 7px;
+      height: 7px;
+    }
+  }
+  img.arrow-blue-left, img.arrow-blue-right{
+    width: 15px;
+  }
+  img.arrow-blue-right.two-lines{
+    bottom: 30px;
+  }
+  .carousel-center-arrow a{
+    background-size: contain;
+    width: 13px;
+    height: 30px;
+    bottom: -40px;
+  }
+  .carousel-caption{
+    *{
+      font-size: 20px;
+    }
+  }
+  .between-boxes{
+    margin-bottom: 20px;
+  }
+  .doctors{
+    margin-bottom: 0px;
+  }
+  .contact {
+    .map{
+      padding-left: 0px;
+      padding-right: 0px;
+    }
+    .form{
+      margin-top: 50px;
+      margin-bottom: 50px;
+      form{
+        margin-left: inherit;
+      }
+    }
+  }
+  .text-xs-center{
+    text-align: center;
+  }
+  .brand-footer{
+    max-width: 100px;
+  }
+  ul.accordion li .description p{
+    font-size: 13px;
+    margin-bottom: 10px;
+  }
+
+
+}
+
+
+
+
+
+@include media(">tablet", "<desktop") {
+  .title-box{
+    img.arrow-blue-left{
+      left: -25px;
+      bottom: 20px;
+    }
+    img.arrow-blue-right{
+      right: -25px;
+      bottom: 60px;
+    }
+    img.arrow-blue-right.two-lines{
+      bottom: 50px;
+    }
+  }
+  .contact {
+    .map{
+      padding-left: 0px;
+      padding-right: 0px;
+    }
+    .form{
+      margin-top: 50px;
+      margin-bottom: 50px;
+      form{
+        margin-left: inherit;
+      }
+    }
+  }
+  .text-xs-center{
+    text-align: center;
+  }
+  .gallery-small{
+    div{
+      margin-bottom: 15px;
+    }
+  }
+  ul.accordion li .description p{
+    font-size: 13px;
+    margin-bottom: 10px;
+  }
+
+}

@@ -1,0 +1,114 @@
+$width-normal: 270px;
+$width-opened: 100%;
+$width-closed: 50px;
+
+$bg1: #e6446e;
+$bg2: #006684;
+$bg3: #d5734a;
+$bg4: #53848a;
+$colors: ('1':$bg1, '2':$bg2, '3':$bg3, '4':$bg4);
+
+@function color($key) {
+  @if map-has-key($colors, $key) {
+    @return map-get($colors, $key);
+  }
+}
+
+.trat-acor{
+  height: 600px;
+  overflow: hidden;
+}
+ul.accordion{
+    list-style:none;
+    /* position:absolute;
+    right:10px;
+    top:0px; */
+    width: 100%;
+    display: table;
+    padding: 0;
+    margin: 0 auto;
+    &.centered{
+      width: 1080px;
+    }
+    li{
+        float:right;
+        width:$width-normal;
+        height:600px;
+        display:block;
+        position:relative;
+        overflow:hidden;
+        cursor:pointer;
+
+        //@include transition(width 1s ease-in-out);
+
+        .heading{
+            padding:10px;
+            margin-top:470px;
+            text-align:center;
+            color: #fff;
+            font-family: 'TodayShop MediumItalic', arial, 'sans-serif';
+            width:$width-normal - 20;
+            line-height: 1;
+            font-size: 28px;
+            &.vertical-text{
+              @include prefix(transform, rotate(-90deg));
+              width: 350px;
+              margin: 400px 0px 0px -148px;
+              text-align:left;
+            }
+        }
+        a{
+            position:absolute;
+            bottom:30px;
+            left:80px;
+            font-size:16px;
+            font-style: italic;
+            text-decoration:none;
+            text-align: center;
+            padding: 0px 10px;
+            color: #fff;
+        }
+
+        .description{
+            font-family: 'TodayShop MediumItalic', arial, 'sans-serif';
+            position:absolute;
+            top:0px;
+            left:$width-normal;
+            display:none;
+            color: #fff;
+            padding-left: 10px;
+            padding-right: 30px;
+            h5{
+              font-family: 'TodayShop XLightItalic', arial, 'sans-serif';
+              font-size: 25px;
+              margin-top: 40px;
+              margin-bottom: 30px;
+            }
+            h6{
+              font-family: 'TodayShop MediumItalic', arial, 'sans-serif';
+              font-size: 15px;
+            }
+            p{
+              font-family: 'TodayShop XLight', arial, 'sans-serif';
+              font-size: 15px;
+              margin-bottom: 30px;
+            }
+        }
+
+
+        @for $i from 1 through 4 {
+          &.bg#{$i}{
+              background: color(#{$i}) url($dir-img + 'trat-00#{$i}.png') no-repeat left top;
+              a{
+                background-color: color(#{$i});
+              }
+          }
+        }
+        &.bg-noimg{
+          background-image: none;
+        }
+
+
+    }
+
+}
