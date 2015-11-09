@@ -61,7 +61,11 @@ $dir-img: '../images/';
 body, html{
   margin: 0;
   padding: 0;
-  font-family: 'TodayShop Regular', arial, 'sans-serif';	
+  font-family: 'TodayShop Regular', arial, 'sans-serif';
+}
+
+.container-fluid{
+	overflow: hidden;
 }
 
 @media ( min-width: 760px ) {
