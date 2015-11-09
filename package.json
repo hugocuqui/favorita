@@ -1,7 +1,11 @@
 {
   "name": "favorita",
   "version": "0.0.0",
-  "dependencies": {},
+  "dependencies": {
+    "express": "^4.13.3",
+    "gzippo": "^0.2.0",
+    "logfmt": "^1.2.0"
+  },
   "repository": {},
   "devDependencies": {
     "grunt": "^0.4.5",
