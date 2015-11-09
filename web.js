@@ -8,7 +8,7 @@ app.use(logfmt.requestLogger());
 
 //app.use(express.static(__dirname + '/dist'));
 app.use(gzippo.staticGzip("" + __dirname + "/dist"));
-var port = Number(process.env.PORT || 5000);
+var port = Number(process.env.PORT || 9000);
 app.listen(port, function() {
      console.log("Listening on " + port);
 });
