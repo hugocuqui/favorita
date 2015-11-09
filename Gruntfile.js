@@ -153,20 +153,33 @@ module.exports = function (grunt) {
     // Add vendor prefixed styles
     autoprefixer: {
       options: {
-        browsers: ['> 1%', 'last 2 versions', 'Firefox ESR', 'Opera 12.1'],
-        map: true,
-        inline: false,
-        sourcesContent: false
+        browsers: ['last 1 version']
       },
       dist: {
         files: [{
           expand: true,
-          cwd: '<%= yeoman.app %>/',
+          cwd: '.tmp/styles/',
           src: '{,*/}*.css',
-          dest: '<%= yeoman.app %>/'
+          dest: '.tmp/styles/'
         }]
       }
     },
+    // autoprefixer: {
+    //   options: {
+    //     browsers: ['> 1%', 'last 2 versions', 'Firefox ESR', 'Opera 12.1'],
+    //     map: true,
+    //     inline: false,
+    //     sourcesContent: false
+    //   },
+    //   dist: {
+    //     files: [{
+    //       expand: true,
+    //       cwd: '.tmp/styles/',
+    //       src: '{,*/}*.css',
+    //       dest: '.tmp/styles/'
+    //     }]
+    //   }
+    // },
 
 
     // Automatically inject Bower components into the app
