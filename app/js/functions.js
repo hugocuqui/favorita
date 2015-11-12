@@ -24,9 +24,13 @@ $(function(){
   // Bind click handler to menu items
   // so we can get a fancy scroll animation
   $('a').click(function(e){
-    var href = $(this).attr("data-target"),
-        offsetTop = href === "#" ? 0 : $(href).offset().top-topMenuHeight+1;
-        $(this).blur();
+    var href = $(this).attr("data-target");
+
+    if(href)
+      var offsetTop = href === "#" ? 0 : $(href).offset().top-topMenuHeight+1;
+
+    $(this).blur();
+
     $('html, body').stop().animate({
         scrollTop: offsetTop
     }, 500);
@@ -91,11 +95,11 @@ $(function(){
 
   $('#accordion > li').hover(
       function () {
-        closed($(this));
-        opened($(this));
+        closed( $(this) );
+        opened( $(this) );
       },
       function () {
-        normal($(this));
+        normal( $(this) );
       }
   );
 
@@ -103,11 +107,11 @@ $(function(){
     function () {
       $('#accordion').removeClass('centered');
       var $this = $('#accordion > li').eq(3);
-      $this.stop(true,true).width(($(window).width() - 150));
+      $this.stop(true,true).animate({ 'width' : ($(window).width() - 150) },1200);
 
-      $this.find('.accordion>a').show();
-      $this.removeClass('bg-noimg');
-      $this.find('.heading').removeClass('vertical-text');
+      //$this.find('.accordion>a').fadeIn();
+      //$this.removeClass('bg-noimg');
+      //$this.find('.heading').removeClass('vertical-text');
     },
     function () {
       $('#accordion').addClass('centered');
@@ -117,7 +121,7 @@ $(function(){
 
   var opened = function(elem){
       var $this = elem;
-      $this.stop(true,false).animate({ 'width' : ($(window).width() - 150) },200);
+      $this.stop(true,false).animate({ 'width' : ($(window).width() - 150) },1200);
       $('.description').stop(true,false).show();
       $this.find('.accordion>a').show();
       $this.removeClass('bg-noimg');
@@ -126,15 +130,15 @@ $(function(){
 
   var closed = function(elem){
       var $this = elem;
-      $this.siblings().stop().animate({'width':'50px'}, 200);
+      $this.siblings().stop().animate({'width':'50px'}, 1200);
       $('.description, .accordion>a').stop(true,true).hide();
       $this.siblings().addClass('bg-noimg');
       $this.siblings().find('.heading').addClass('vertical-text');
   }
 
   var normal = function(){
-    $('#accordion > li').stop().animate({'width':'270px'}, 200);
-    $('.description').stop(true,false).fadeOut(500);
+    $('#accordion > li').stop().animate({'width':'270px'}, 1200);
+    $('.description').stop(true,false).fadeOut(1200);
     $('.accordion>a').stop(true,false).show();
     $('#accordion > li').removeClass('bg-noimg');
     $('.heading').removeClass('vertical-text');
