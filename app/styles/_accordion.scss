@@ -37,7 +37,7 @@ ul.accordion{
         display:block;
         position:relative;
         overflow:hidden;
-        cursor:pointer;
+        //cursor:pointer;
 
         //@include transition(width 1s ease-in-out);
 
@@ -57,7 +57,7 @@ ul.accordion{
               text-align:left;
             }
         }
-        a{
+        .btn-saibamais{
             position:absolute;
             bottom:30px;
             left:80px;
@@ -99,7 +99,7 @@ ul.accordion{
         @for $i from 1 through 4 {
           &.bg#{$i}{
               background: color(#{$i}) url($dir-img + 'trat-00#{$i}.png') no-repeat left top;
-              a{
+              .btn-saibamais{
                 background-color: color(#{$i});
               }
           }
