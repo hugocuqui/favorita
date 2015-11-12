@@ -251,7 +251,7 @@ body, html{
 
 .carousel-inner {
     .item {
-			@include prefix(transition, transform 1s ease-in-out);
+			@include prefix(transition, transform 1s ease-in-out left);
       img{
         width: 100%;
       }

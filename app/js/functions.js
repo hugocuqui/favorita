@@ -107,7 +107,7 @@ $(function(){
     function () {
       $('#accordion').removeClass('centered');
       var $this = $('#accordion > li').eq(3);
-      $this.stop(true,true).animate({ 'width' : ($(window).width() - 150) },1200);
+      //$this.stop(true,true).animate({ 'width' : ($(window).width() - 150) },1200);
 
       //$this.find('.accordion>a').fadeIn();
       //$this.removeClass('bg-noimg');
