@@ -24,10 +24,10 @@ angular
         templateUrl: 'views/index.html',
         controller: 'MainCtrl'
       })
-      .when('/quem_somos', {
-        templateUrl: 'views/index.html',
-        controller: 'MainCtrl'
-      })
+      // .when('/quem_somos', {
+      //   templateUrl: 'views/index.html',
+      //   controller: 'MainCtrl'
+      // })
       // .when('/tratamento', {
       //   templateUrl: 'views/main.html#tratamento',
       //   controller: 'MainCtrl'

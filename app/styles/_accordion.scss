@@ -14,6 +14,12 @@ $colors: ('1':$bg1, '2':$bg2, '3':$bg3, '4':$bg4);
   }
 }
 
+.bar-scroll{
+  height: 460px;
+  overflow: overlay;
+  padding-right: 10px; 
+}
+
 .trat-acor{
   height: 600px;
   overflow: hidden;
@@ -80,18 +86,18 @@ ul.accordion{
             padding-right: 30px;
             h5{
               font-family: 'TodayShop XLightItalic', arial, 'sans-serif';
-              font-size: 25px;
+              font-size: 35px;
               margin-top: 40px;
               margin-bottom: 20px;
             }
             h6{
               font-family: 'TodayShop MediumItalic', arial, 'sans-serif';
-              font-size: 16px;
+              font-size: 20px;
             }
             p{
               font-family: 'TodayShop XLight', arial, 'sans-serif';
-              font-size: 16px;
-              margin-bottom: 20px;
+              font-size: 17px;
+              margin-bottom: 10px;
             }
         }
 
