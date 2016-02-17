@@ -118,10 +118,11 @@ $(function(){
     }
   );
 
+  var speed = 2000;
 
   var opened = function(elem){
       var $this = elem;
-      $this.stop(true,false).animate({ 'width' : ($(window).width() - 150) },1200);
+      $this.stop(true,false).animate({ 'width' : ($(window).width() - 150) },speed);
       $('.description').stop(true,false).show();
       $this.find('.accordion>a').show();
       $this.removeClass('bg-noimg');
@@ -130,15 +131,15 @@ $(function(){
 
   var closed = function(elem){
       var $this = elem;
-      $this.siblings().stop().animate({'width':'50px'}, 1200);
+      $this.siblings().stop().animate({'width':'50px'}, speed);
       $('.description, .accordion>a').stop(true,true).hide();
       $this.siblings().addClass('bg-noimg');
       $this.siblings().find('.heading').addClass('vertical-text');
   }
 
   var normal = function(){
-    $('#accordion > li').stop().animate({'width':'270px'}, 1200);
-    $('.description').stop(true,false).fadeOut(1200);
+    $('#accordion > li').stop().animate({'width':'270px'}, speed);
+    $('.description').stop(true,false).fadeOut(speed);
     $('.accordion>a').stop(true,false).show();
     $('#accordion > li').removeClass('bg-noimg');
     $('.heading').removeClass('vertical-text');
