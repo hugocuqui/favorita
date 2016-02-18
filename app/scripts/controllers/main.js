@@ -25,7 +25,7 @@ angular.module('favoritaApp')
 
       $http({
           method: 'POST',
-          url: 'processForm.php',   
+          url: 'processForm.php',
           data: param(contato),
           headers: { 'Content-Type': 'application/x-www-form-urlencoded' }
       })
@@ -33,7 +33,7 @@ angular.module('favoritaApp')
         if ( data.success ) {
           $scope.enviado = true;
         } else {
-          $scope.error = true;
+          $scope.error = false;
         }
       });
 

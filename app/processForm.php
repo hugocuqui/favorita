@@ -40,7 +40,7 @@ if ( ! empty($errors)) {
   $headers = 'From: '.$email_from."rn".
   'Reply-To: '.$email_from."rn" .
   'X-Mailer: PHP/' . phpversion();
-  @mail($email_to, $email_subject, $email_message, $headers);
+  mail($email_to, $email_subject, $email_message, $headers);
 }
 // return all our data to an AJAX call
 echo json_encode($data);
