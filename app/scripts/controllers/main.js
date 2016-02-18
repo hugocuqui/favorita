@@ -26,7 +26,7 @@ angular.module('favoritaApp')
       $http({
           method: 'POST',
           url: 'processForm.php',
-          data: param(contato),
+          data: param($scope.contato),
           headers: { 'Content-Type': 'application/x-www-form-urlencoded' }
       })
       .success( function(data) {
