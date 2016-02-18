@@ -3,8 +3,6 @@ $errors = array(); // array to hold validation errors
 $data = array(); // array to pass back data
 // validate the variables ======================================================
 
-  var_dump('aqui: '.$_POST['nome']);
-
 if (empty($_POST['nome']))
 $errors['nome'] = 'Name is required.';
 if (empty($_POST['email']))

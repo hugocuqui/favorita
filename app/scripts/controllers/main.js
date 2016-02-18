@@ -10,6 +10,7 @@
 angular.module('favoritaApp')
   .controller('MainCtrl', function ($scope, $http) {
 
+    $scope.contato = {};
     $scope.enviado = false;
 
     var param = function(data) {
@@ -21,20 +22,25 @@ angular.module('favoritaApp')
             return returnString.slice( 0, returnString.length - 1 );
       };
 
-    $scope.enviarEmail = function( contato ) {
-
+    $scope.submitForm = function() {
+      var dados = param($scope.contato);
+      console.log(dados);
       $http({
           method: 'POST',
           url: 'processForm.php',
-          data: param($scope.contato),
+          data: dados,
           headers: { 'Content-Type': 'application/x-www-form-urlencoded' }
       })
       .success( function(data) {
         if ( data.success ) {
           $scope.enviado = true;
+          $scope.contato = {};
         } else {
           $scope.error = false;
         }
+      })
+      .error( function(data){
+        console.log("errors: "+data);
       });
 
     };

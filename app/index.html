@@ -376,7 +376,7 @@
         </div>
         <div class="col-xs-12 col-md-7 form">
 
-          <form class="" name="contatoForm" ng-submit="submitForm()" novalidate> <!-- ng-controller="FormController" -->
+          <form class="" name="contatoForm" novalidate ng-submit="submitForm()"> <!-- ng-controller="FormController" -->
             <div class="col-xs-12 col-md-8">
 
               <div class="col-xs-12" ng-show="enviado">
@@ -428,10 +428,10 @@
                 <input type="text" class="phone_with_ddd" ng-model="contato.telefone" name="telefone" placeholder="telefone" ng-required="true" />
               </div>
               <div class="col-xs-12">
-                <textarea name="menssage" rows="8" cols="40" ng-model="contato.message" placeholder="mensagem*" ></textarea>
+                <textarea name="menssage" rows="8" cols="40" ng-model="contato.menssage" placeholder="mensagem*" ></textarea>
               </div>
               <div class="col-xs-12 text-right">
-                <button class="btn-send" ng-click="enviarEmail(contato)" >ENVIAR</button>
+                <input type="submit" class="btn-send" value="ENVIAR" >
               </div>
 
             </div>
